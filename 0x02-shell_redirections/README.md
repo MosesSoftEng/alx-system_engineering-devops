@@ -38,7 +38,7 @@ Script that deletes all the regular files (not the directories) with a .js exten
 Write a script that counts the number of directories and sub-directories in the current directory.
 
 ## 12-newest_files
-Create a script that displays the 10 newest files in the current directory.
+Script that displays the 10 newest files in the current directory.
 
 Requirements:
 
@@ -46,9 +46,13 @@ Requirements:
     Sorted from the newest to the oldest
 
 ## 13-unique
-Create a script that takes a list of words as input and prints only words that appear exactly once.
+Script that takes a list of words as input and prints only words that appear exactly once.
 
     Input format: One line, one word
     Output format: One line, one word
     Words should be sorted
 
+## 14-findthatword
+Script that display lines containing the pattern “root” from the file /etc/passwd.
+
+##
