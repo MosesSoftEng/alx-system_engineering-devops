@@ -71,5 +71,6 @@ Script that display all lines of the file /etc/ssh/sshd_config starting with a l
 ## 19-AZ
 Script that replace all characters A and c from input to Z and e respectively.
 
-## 
+## 20-hiago 
+Script that removes all letters c and C from input. 
 
