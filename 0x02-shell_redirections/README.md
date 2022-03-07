@@ -68,3 +68,8 @@ Script that display all the lines in the file /etc/passwd that do not contain th
 Script that display all lines of the file /etc/ssh/sshd_config starting with a letter.
     include capital letters as well
 
+## 19-AZ
+Script that replace all characters A and c from input to Z and e respectively.
+
+## 
+
