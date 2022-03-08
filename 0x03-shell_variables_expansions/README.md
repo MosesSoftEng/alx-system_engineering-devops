@@ -49,5 +49,6 @@ Script that prints all possible combinations of two letters, except oo.
     Do not print oo
     Your script file should contain maximum 64 characters
 
-
+## 13-print_float
+Script that prints a number with two decimal places.
 
