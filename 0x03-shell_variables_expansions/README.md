@@ -31,5 +31,11 @@ Script that prints the result of the addition of 128 with the value stored in th
 
 ## 9-divide_and_rule
 Script that prints the result of POWER divided by DIVIDE, followed by a new line.
-    POWER and DIVIDE are environment variables
+    POWER and DIVIDE are environment variables.
+
+## 10-love_exponent_breath
+Script that displays the result of BREATH to the power LOVE
+    BREATH and LOVE are environment variables
+    The script should display the result, followed by a new line
+
 
