@@ -19,7 +19,10 @@ Script that lists environment variables.
 Script that lists all local variables and environment variables, and functions.
 
 ## 6-create_local_variable
-Create a script that creates a new local variable.
+Script that create a script that creates a new local variable.
     Name: BEST
     Value: School
+
+## 7-create_global_variable
+Script that creates a new global variable.
 
