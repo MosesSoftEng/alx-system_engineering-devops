@@ -60,4 +60,7 @@ Script that converts a number from base 10 to base 16.
 ## 101-rot13
 Script that encodes and decodes text using the rot13 encryption
 
+## 103-water_and_stir
+Script that adds the two numbers stored in the environment variables WATER and STIR and prints the result.
+
 
