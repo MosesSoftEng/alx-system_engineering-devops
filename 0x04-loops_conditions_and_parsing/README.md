@@ -79,6 +79,9 @@ shellcheck 2-while_best_school #Check shell script formatting
 chmod a+x 2-while_best_school #Give file executable permissions
 ./2-while_best_school #Execute script
 
+
+## [3-until_best_school](3-until_best_school)
+
 # Git push command
 git add --all; git commit -m "";git push
 
