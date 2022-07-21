@@ -32,7 +32,7 @@ Requirement:
 
 sylvain@ubuntu$ head -n 2 1-for_best_school 
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+``# This script is displaying "Best School" 10 times
 sylvain@ubuntu$ ./1-for_best_school 
 Best School
 Best School
@@ -50,13 +50,34 @@ Note that:
  - The first line of my Bash script starts with #!/usr/bin/env bash
  - The second line of my Bash scripts is a comment explaining what it is doing
 
-
 shellcheck 1-for_best_school #Check shell script formatting
 chmod a+x 1-for_best_school #Give file executable permissions
 ./1-for_best_school #Execute script
 
+## [ 2-while_best_school]( 2-while_best_school)
+Write a Bash script that displays Best School 10 times.
 
+Requirements:
+ - You must use the while loop (for and until are forbidden)
 
+```
+sylvain@ubuntu$ ./2-while_best_school
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+sylvain@ubuntu$
+```
+
+shellcheck 2-while_best_school #Check shell script formatting
+chmod a+x 2-while_best_school #Give file executable permissions
+./2-while_best_school #Execute script
 
 # Git push command
 git add --all; git commit -m "";git push
