@@ -379,6 +379,11 @@ shellcheck 10-fizzbuzz #Check shell script formatting
 chmod a+x 10-fizzbuzz #Give file executable permissions
 ./10-fizzbuzz school #Execute script
 
+## 100-read_and_cut
+shellcheck 100-read_and_cut #Check shell script formatting
+chmod a+x 100-read_and_cut #Give file executable permissions
+./100-read_and_cut school #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
