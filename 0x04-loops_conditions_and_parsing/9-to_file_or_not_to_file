@@ -10,11 +10,11 @@ then
 		echo "$1 file is not empty"
 	else
 		echo "$1 file is empty"
+	fi
 
-		if test -f "$1"; 
-		then
-			echo "$1 file is a regular file"
-		fi
+	if test -f "$1"; 
+	then
+		echo "$1 file is a regular file"
 	fi
 else
 	echo "$1 file does not exist"
