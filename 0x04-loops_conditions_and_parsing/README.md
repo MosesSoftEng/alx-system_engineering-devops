@@ -104,6 +104,32 @@ shellcheck 3-until_best_school #Check shell script formatting
 chmod a+x 3-until_best_school #Give file executable permissions
 ./3-until_best_school #Execute script
 
+## [4-if_9_say_hi](4-if_9_say_hi)
+Write a Bash script that displays Best School 10 times, but for the 9th iteration, displays Best School and then Hi on a new line.
+
+Requirements:
+ - You must use the while loop (for and until are forbidden)
+ - You must use the if statement
+```
+sylvain@ubuntu$ ./4-if_9_say_hi
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Hi
+Best School
+sylvain@ubuntu$ 
+```
+
+shellcheck 4-if_9_say_hi #Check shell script formatting
+chmod a+x 4-if_9_say_hi #Give file executable permissions
+./4-if_9_say_hi #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
