@@ -7,9 +7,9 @@ then
 
 	if test -s "$1"; 
 	then
-		echo "$1 file is empty"
-	else
 		echo "$1 file is not empty"
+	else
+		echo "$1 file is empty"
 
 		if test -f "$1"; 
 		then
@@ -17,5 +17,5 @@ then
 		fi
 	fi
 else
-	echo "$1 file file does not exist"
+	echo "$1 file does not exist"
 fi
