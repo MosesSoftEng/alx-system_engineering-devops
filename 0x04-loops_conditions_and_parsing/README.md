@@ -174,7 +174,7 @@ shellcheck 6-superstitious_numbers #Check shell script formatting
 chmod a+x 6-superstitious_numbers #Give file executable permissions
 ./6-superstitious_numbers #Execute script
 
-## 7-clock
+## [7-clock](7-clock)
 Write a Bash script that displays the time for 12 hours and 59 minutes:
  - display hours from 0 to 12
  - display minutes from 1 to 59
@@ -263,7 +263,7 @@ shellcheck 7-clock #Check shell script formatting
 chmod a+x 7-clock #Give file executable permissions
 ./7-clock #Execute script
 
-## 8-for_ls
+## [8-for_ls](8-for_ls)
 Write a Bash script that displays:
  - The content of the current directory
  - In a list format
@@ -301,7 +301,7 @@ shellcheck 8-for_ls #Check shell script formatting
 chmod a+x 8-for_ls #Give file executable permissions
 ./8-for_ls #Execute script
 
-## 9-to_file_or_not_to_file
+## [9-to_file_or_not_to_file](9-to_file_or_not_to_file)
 Write a Bash script that gives you information about the school file.
 
 Requirements:
@@ -340,6 +340,44 @@ sylvain@ubuntu$
 shellcheck 9-to_file_or_not_to_file #Check shell script formatting
 chmod a+x 9-to_file_or_not_to_file #Give file executable permissions
 ./9-to_file_or_not_to_file school #Execute script
+
+# [10-fizzbuzz](10-fizzbuzz)
+Write a Bash script that displays numbers from 1 to 100.
+
+Requirements:
+ - Displays FizzBuzz when the number is a multiple of 3 and 5
+ - Displays Fizz when the number is multiple of 3
+ - Displays Buzz when the number is a multiple of 5
+ - Otherwise, displays the number
+ - In a list format
+```
+sylvain@ubuntu$ ./10-fizzbuzz | head -20
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+sylvain@ubuntu$ 
+```
+
+shellcheck 10-fizzbuzz #Check shell script formatting
+chmod a+x 10-fizzbuzz #Give file executable permissions
+./10-fizzbuzz school #Execute script
 
 # Git push command
 git add --all; git commit -m "";git push
