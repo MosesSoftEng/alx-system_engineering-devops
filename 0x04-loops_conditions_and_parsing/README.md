@@ -394,6 +394,11 @@ shellcheck 102-lets_parse_apache_logs #Check shell script formatting
 chmod a+x 102-lets_parse_apache_logs #Give file executable permissions
 ./102-lets_parse_apache_logs school #Execute script
 
+## [103-dig_the-data](103-dig_the-data)
+shellcheck 103-dig_the-data #Check shell script formatting
+chmod a+x 103-dig_the-data #Give file executable permissions
+./103-dig_the-data school #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
