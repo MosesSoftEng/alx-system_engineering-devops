@@ -79,8 +79,30 @@ shellcheck 2-while_best_school #Check shell script formatting
 chmod a+x 2-while_best_school #Give file executable permissions
 ./2-while_best_school #Execute script
 
-
 ## [3-until_best_school](3-until_best_school)
+Write a Bash script that displays Best School 10 times.
+
+Requirements:
+ - You must use the until loop (for and while are forbidden)
+
+```
+sylvain@ubuntu$ ./3-until_best_school
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+sylvain@ubuntu$
+```
+
+shellcheck 3-until_best_school #Check shell script formatting
+chmod a+x 3-until_best_school #Give file executable permissions
+./3-until_best_school #Execute script
 
 # Git push command
 git add --all; git commit -m "";git push
