@@ -389,6 +389,11 @@ shellcheck 101-tell_the_story_of_passwd #Check shell script formatting
 chmod a+x 101-tell_the_story_of_passwd #Give file executable permissions
 ./101-tell_the_story_of_passwd school #Execute script
 
+## [102-lets_parse_apache_logs](102-lets_parse_apache_logs)
+shellcheck 102-lets_parse_apache_logs #Check shell script formatting
+chmod a+x 102-lets_parse_apache_logs #Give file executable permissions
+./102-lets_parse_apache_logs school #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
