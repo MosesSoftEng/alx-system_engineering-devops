@@ -158,6 +158,20 @@ shellcheck 5-4_bad_luck_8_is_your_chance #Check shell script formatting
 chmod a+x 5-4_bad_luck_8_is_your_chance #Give file executable permissions
 ./5-4_bad_luck_8_is_your_chance #Execute script
 
+## [6-superstitious_numbers](6-superstitious_numbers)
+Write a Bash script that displays numbers from 1 to 20 and:
+ - displays 4 and then bad luck from China for the 4th loop iteration
+ - displays 9 and then bad luck from Japan for the 9th loop iteration
+ - displays 17 and then bad luck from Italy for the 17th loop iteration
+
+Requirements:
+ - You must use the while loop (for and until are forbidden)
+ - You must use the case statement
+
+shellcheck 6-superstitious_numbers #Check shell script formatting
+chmod a+x 6-superstitious_numbers #Give file executable permissions
+./6-superstitious_numbers #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
