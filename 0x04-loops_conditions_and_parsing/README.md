@@ -130,6 +130,34 @@ shellcheck 4-if_9_say_hi #Check shell script formatting
 chmod a+x 4-if_9_say_hi #Give file executable permissions
 ./4-if_9_say_hi #Execute script
 
+## [5-4_bad_luck_8_is_your_chance](5-4_bad_luck_8_is_your_chance)
+Write a Bash script that loops from 1 to 10 and:
+ - displays bad luck for the 4th loop iteration
+ - displays good luck for the 8th loop iteration
+ - displays Best School for the other iterations
+
+Requirements:
+ - You must use the while loop (for and until are forbidden)
+ - You must use the if, elif and else statements
+
+```
+sylvain@ubuntu$ ./5-4_bad_luck_8_is_your_chance
+Best School
+Best School
+Best School
+bad luck
+Best School
+Best School
+Best School
+good luck
+Best School
+Best School
+sylvain@ubuntu$ 
+```
+shellcheck 5-4_bad_luck_8_is_your_chance #Check shell script formatting
+chmod a+x 5-4_bad_luck_8_is_your_chance #Give file executable permissions
+./5-4_bad_luck_8_is_your_chance #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
