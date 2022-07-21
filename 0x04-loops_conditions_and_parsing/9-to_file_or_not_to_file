@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 # Bash script to display information about a file
 
-if test -e "$1"; 
+if [ -e "$1" ]
 then
     echo "$1 file exists"
 
-	if test -s "$1"; 
+	if [ -s "$1" ]
 	then
 		echo "$1 file is not empty"
 	else
 		echo "$1 file is empty"
 	fi
 
-	if test -f "$1"; 
+	if [ -f "$1" ]
 	then
-		echo "$1 file is a regular file"
+		echo "$1 is a regular file"
 	fi
 else
 	echo "$1 file does not exist"
