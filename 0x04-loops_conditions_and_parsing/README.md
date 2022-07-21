@@ -1,7 +1,11 @@
 # 0x04. Loops, conditions and parsing
 
+## Concepts
+- Make shell script portable with #!usr/bin/env instead of #!/bin/bash
+
+
 # Tasks
-## [0. Create a SSH RSA key pair :open_file_folder:](0. Create a SSH RSA key pair)
+## [0-RSA_public_key.pub](0-RSA_public_key.pub)
 Read for this task:
  - Linux and Mac OS users
  - Windows users
@@ -20,11 +24,43 @@ Requirements:
 
 SSH and RSA keys will be covered in depth in a later project.
 
-## 
+## [1-for_best_school](1-for_best_school)
+Write a Bash script that displays Best School 10 times.
 
+Requirement:
+ - You must use the for loop (while and until are forbidden)
+
+sylvain@ubuntu$ head -n 2 1-for_best_school 
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+sylvain@ubuntu$ ./1-for_best_school 
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+sylvain@ubuntu$ 
+
+Note that:
+ - The first line of my Bash script starts with #!/usr/bin/env bash
+ - The second line of my Bash scripts is a comment explaining what it is doing
+
+
+shellcheck 1-for_best_school #Check shell script formatting
+chmod a+x 1-for_best_school #Give file executable permissions
+./1-for_best_school #Execute script
 
 
 
 
 # Git push command
 git add --all; git commit -m "";git push
+
+# References
+ 1. [shellcheck](https://github.com/koalaman/shellcheck#installing)
+ 2. [Bash For Loop Examples](https://www.cyberciti.biz/faq/bash-for-loop/#Examples)
