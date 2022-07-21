@@ -1,7 +1,9 @@
 # 0x04. Loops, conditions and parsing
 
 ## Concepts
-- Make shell script portable with #!usr/bin/env instead of #!/bin/bash
+- Make shell script portable with #!usr/bin/env instead of #!/bin/bash.
+- cut command to cut parts of lines from specified files or piped data
+- Passing command arguments to shell script.
 
 
 # Tasks
@@ -273,10 +275,10 @@ Requirements:
 ```
 sylvain@ubuntu$ ls
 100-read_and_cut -  -  -   1-for_best_school -  -  6-superstitious_numbers
-101-tell_the_story_of_passwd  2-while_best_school -    7-clock
-102-lets_parse_apache_logs - 3-until_best_school -    8-for_ls
+101-tell_the_story_of_passwd  2-while_best_school -  - 7-clock
+102-lets_parse_apache_logs - 3-until_best_school -  - 8-for_ls
 103-dig_the-data -  -  -   4-if_9_say_hi -  -  -  -   9-to_file_or_not_to_file
-10-fizzbuzz -  -  -  -    5-4_bad_luck_8_is_your_chance
+10-fizzbuzz -  -  -  -  - 5-4_bad_luck_8_is_your_chance
 sylvain@ubuntu$  ./8-for_ls
 read_and_cut
 tell_the_story_of_passwd
@@ -299,9 +301,51 @@ shellcheck 8-for_ls #Check shell script formatting
 chmod a+x 8-for_ls #Give file executable permissions
 ./8-for_ls #Execute script
 
+## 9-to_file_or_not_to_file
+Write a Bash script that gives you information about the school file.
+
+Requirements:
+  - You must use if and, else (case is forbidden)
+  - Your Bash script should check if the file exists and print:
+		- if the file exists: school file exists
+		- if the file does not exist: school file does not exist
+  - If the file exists, print:
+		- if the file is empty: school file is empty
+		- if the file is not empty: school file is not empty
+		- if the file is a regular file: school is a regular file
+		- if the file is not a regular file: (nothing)
+```
+sylvain@ubuntu$ file school
+school: cannot open `school' (No such file or directory)
+sylvain@ubuntu$ ./9-to_file_or_not_to_file 
+school file does not exist
+sylvain@ubuntu$ touch school
+sylvain@ubuntu$ ./9-to_file_or_not_to_file 
+school file exists
+school file is empty
+school is a regular file
+sylvain@ubuntu$ echo 'betty' > school 
+sylvain@ubuntu$ ./9-to_file_or_not_to_file 
+school file exists
+school file is not empty
+school is a regular file
+sylvain@ubuntu$ rm school 
+sylvain@ubuntu$ mkdir school
+sylvain@ubuntu$ ./9-to_file_or_not_to_file 
+school file exists
+school file is not empty
+sylvain@ubuntu$ 
+```
+
+shellcheck 9-to_file_or_not_to_file #Check shell script formatting
+chmod a+x 9-to_file_or_not_to_file #Give file executable permissions
+./9-to_file_or_not_to_file school #Execute script
+
 # Git push command
 git add --all; git commit -m "";git push
 
 # References
  1. [shellcheck](https://github.com/koalaman/shellcheck#installing)
  2. [Bash For Loop Examples](https://www.cyberciti.biz/faq/bash-for-loop/#Examples)
+ 3. [How to Check if a File or Directory Exists in Bash](https://linuxize.com/post/bash-check-if-file-exists/)
+ 4. [Cut Command in Linux](https://linuxize.com/post/linux-cut-command/)
