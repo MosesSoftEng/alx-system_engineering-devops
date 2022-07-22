@@ -153,6 +153,35 @@ shellcheck 3-show_your_bash_pid_made_easy #Check shell script formatting
 chmod a+x 3-show_your_bash_pid_made_easy #Give file executable permissions
 ./3-show_your_bash_pid_made_easy school #Execute script
 
+## [4-to_infinity_and_beyond](4-to_infinity_and_beyond)
+
+Write a Bash script that displays To infinity and beyond indefinitely.
+
+Requirements:
+ - In between each iteration of the loop, add a sleep 2
+
+```
+sylvain@ubuntu$ ./4-to_infinity_and_beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+^C
+sylvain@ubuntu$
+```
+
+Note that I ctrl+c (killed) the Bash script in the example.
+
+Repo:
+ - GitHub repository: alx-system_engineering-devops
+ - Directory: 0x05-processes_and_signals
+ - File: 4-to_infinity_and_beyond
+
+shellcheck 4-to_infinity_and_beyond #Check shell script formatting
+chmod a+x 4-to_infinity_and_beyond #Give file executable permissions
+./4-to_infinity_and_beyond school #Execute script
+
 # Commands
 ## Git push command
 git add --all; git commit -m "";git push
