@@ -225,6 +225,52 @@ shellcheck 5-dont_stop_me_now #Check shell script formatting
 chmod a+x 5-dont_stop_me_now #Give file executable permissions
 ./5-dont_stop_me_now school #Execute script
 
+
+
+## [6-stop_me_if_you_can](6-stop_me_if_you_can)
+Write a Bash script that stops 4-to_infinity_and_beyond process.
+
+Requirements:
+ - You cannot use kill or killall
+
+Terminal #0
+
+```
+sylvain@ubuntu$ ./4-to_infinity_and_beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+Terminated
+sylvain@ubuntu$ 
+```
+
+Terminal #1
+
+```
+sylvain@ubuntu$ ./6-stop_me_if_you_can
+sylvain@ubuntu$
+```
+
+I opened 2 terminals in this example, started by running my 4-to_infinity_and_beyond Bash script in terminal #0 and then moved on terminal #1 to run 6-stop_me_if_you_can. We can then see in terminal #0 that my process has been terminated.
+
+Repo:
+
+ - GitHub repository: alx-system_engineering-devops
+ - Directory: 0x05-processes_and_signals
+ - File: 6-stop_me_if_you_can
+
+shellcheck 6-stop_me_if_you_can #Check shell script formatting
+chmod a+x 6-stop_me_if_you_can #Give file executable permissions
+./6-stop_me_if_you_can school #Execute script
+
 # Commands
 ## Git push command
 git add --all; git commit -m "";git push
