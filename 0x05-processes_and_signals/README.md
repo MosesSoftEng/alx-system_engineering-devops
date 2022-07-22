@@ -11,9 +11,16 @@ Signals are software interrupts sent to a program to indicate that an important 
 
 # :computer: Tasks
 
+## 0-what-is-my-pid
+
+shellcheck 0-what-is-my-pid #Check shell script formatting
+chmod a+x 0-what-is-my-pid #Give file executable permissions
+./0-what-is-my-pid school #Execute script
 
 
-
+# Commands
+## Git push command
+git add --all; git commit -m "";git push
 
 # References
 1. [Unix / Linux - Signals and Traps](https://www.tutorialspoint.com/unix/unix-signals-traps.htm)
