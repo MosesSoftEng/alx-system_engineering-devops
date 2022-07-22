@@ -341,6 +341,12 @@ shellcheck 8-beheaded_process #Check shell script formatting
 chmod a+x 8-beheaded_process #Give file executable permissions
 ./8-beheaded_process school #Execute script
 
+## [100-process_and_pid_file](100-process_and_pid_file)
+shellcheck 100-process_and_pid_file #Check shell script formatting
+chmod a+x 100-process_and_pid_file #Give file executable permissions
+./100-process_and_pid_file school #Execute script
+
+
 # Commands
 ## Git push command
 git add --all; git commit -m "";git push
