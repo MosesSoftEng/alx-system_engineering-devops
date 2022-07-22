@@ -355,6 +355,13 @@ shellcheck manage_my_process #Check shell script formatting
 chmod a+x manage_my_process #Give file executable permissions
 ./manage_my_process #Execute script
 
+
+## 102-zombie.
+betty 102-zombie.c
+gcc 102-zombie.c -o zombie
+./zombie 
+
+
 # Commands
 ## Git push command
 git add --all; git commit -m "";git push
