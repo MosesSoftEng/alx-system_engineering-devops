@@ -262,7 +262,6 @@ sylvain@ubuntu$
 I opened 2 terminals in this example, started by running my 4-to_infinity_and_beyond Bash script in terminal #0 and then moved on terminal #1 to run 6-stop_me_if_you_can. We can then see in terminal #0 that my process has been terminated.
 
 Repo:
-
  - GitHub repository: alx-system_engineering-devops
  - Directory: 0x05-processes_and_signals
  - File: 6-stop_me_if_you_can
@@ -270,6 +269,43 @@ Repo:
 shellcheck 6-stop_me_if_you_can #Check shell script formatting
 chmod a+x 6-stop_me_if_you_can #Give file executable permissions
 ./6-stop_me_if_you_can school #Execute script
+
+## [7-highlander](7-highlander)
+Write a Bash script that displays:
+ - To infinity and beyond indefinitely
+ - With a sleep 2 in between each iteration
+ - I am invincible!!! when receiving a SIGTERM signal
+
+Make a copy of your 6-stop_me_if_you_can script, name it 67-stop_me_if_you_can, that kills the 7-highlander process instead of the 4-to_infinity_and_beyond one.
+
+Terminal #0
+```
+sylvain@ubuntu$ ./7-highlander
+To infinity and beyond
+To infinity and beyond
+I am invincible!!!
+To infinity and beyond
+I am invincible!!!
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+I am invincible!!!
+To infinity and beyond
+^C
+sylvain@ubuntu$
+```
+
+Terminal #1
+```
+sylvain@ubuntu$ ./67-stop_me_if_you_can 
+sylvain@ubuntu$ ./67-stop_me_if_you_can
+sylvain@ubuntu$ ./67-stop_me_if_you_can
+sylvain@ubuntu$ 
+```
+
+shellcheck 7-highlander #Check shell script formatting
+chmod a+x 7-highlander #Give file executable permissions
+./7-highlander school #Execute script
 
 # Commands
 ## Git push command
