@@ -346,6 +346,14 @@ shellcheck 100-process_and_pid_file #Check shell script formatting
 chmod a+x 100-process_and_pid_file #Give file executable permissions
 ./100-process_and_pid_file school #Execute script
 
+## [101-manage_my_process, manage_my_process](101-manage_my_process, manage_my_process)
+shellcheck 101-manage_my_process #Check shell script formatting
+chmod a+x 101-manage_my_process #Give file executable permissions
+./101-manage_my_process #Execute script
+
+shellcheck manage_my_process #Check shell script formatting
+chmod a+x manage_my_process #Give file executable permissions
+./manage_my_process #Execute script
 
 # Commands
 ## Git push command
