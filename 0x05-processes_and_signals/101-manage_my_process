@@ -17,7 +17,7 @@
 #   If any other or no arguments are passed, displays
 #+  "Usage: manage_my_process {start|stop|restart}"
 
-ase $1 in
+case $1 in
 	"start")
 		./manage_my_process &
 		echo $! > /var/run/my_process.pid
