@@ -307,6 +307,40 @@ shellcheck 7-highlander #Check shell script formatting
 chmod a+x 7-highlander #Give file executable permissions
 ./7-highlander school #Execute script
 
+## [8-beheaded_process](8-beheaded_process)
+Write a Bash script that kills the process 7-highlander.
+
+Terminal #0
+
+```
+sylvain@ubuntu$ ./7-highlander 
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+To infinity and beyond
+Killed
+sylvain@ubuntu$
+```
+
+Terminal #1
+
+```
+sylvain@ubuntu$ ./8-beheaded_process
+sylvain@ubuntu$
+```
+
+I started 7-highlander in Terminal #0 and then run 8-beheaded_process in terminal #1 and we can see that the 7-highlander has been killed.
+
+Repo:
+
+ - GitHub repository: alx-system_engineering-devops
+ - Directory: 0x05-processes_and_signals
+ - File: 8-beheaded_process
+
+shellcheck 8-beheaded_process #Check shell script formatting
+chmod a+x 8-beheaded_process #Give file executable permissions
+./8-beheaded_process school #Execute script
+
 # Commands
 ## Git push command
 git add --all; git commit -m "";git push
