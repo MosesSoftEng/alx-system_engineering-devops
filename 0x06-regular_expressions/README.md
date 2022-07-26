@@ -19,7 +19,7 @@ SchoolSchool$
 sylvain@ubuntu$ ./0-simply_match_school.rb "Grace Hopper" | cat -e
 $
 ```
-chmod a+x 0-simply_match_school.rb; ./0-simply_match_school.rb
+chmod a+x 0-simply_match_school.rb;
 
 ## [1-repetition_token_0.rb](1-repetition_token_0.rb)
 Requirements:
@@ -37,6 +37,15 @@ hbttttttn
 ```
 
 chmod a+x 1-repetition_token_0.rb; ./1-repetition_token_0.rb
+
+## [2-repetition_token_1.rb](2-repetition_token_1.rb)
+Requirements:
+
+ - Find the regular expression that will match the above cases
+ - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+
+
+chmod a+x 2-repetition_token_1.rb;
 
 # Git push command
 git add --all; git commit -m "";git push
