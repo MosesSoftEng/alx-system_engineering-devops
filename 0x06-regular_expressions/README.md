@@ -129,6 +129,12 @@ $
 chmod a+x 5-beginning_and_end.rb
 
 ## [6-phone_number.rb](6-phone_number.rb)
+```
+4155049898
+4155049898
+415 504 9898
+415-504-9898
+```
 This task is brought to you by a professional advisor Neha Jain, Senior Software Engineer at LinkedIn.
 
 Requirement:
@@ -149,6 +155,28 @@ sylvain@ubuntu$
 ```
 
 chmod a+x 6-phone_number.rb
+
+## 7-OMG_WHY_ARE_YOU_SHOUTING.rb
+```
+I realLy hOpe VancouvEr posseSs Yummy Soft vAnilla Dupper Mint Ice Nutella cream
+WHAT do you SAY?
+cannot read you
+```
+
+Requirement:
+ - The regular expression must be only matching: capital letters
+
+Example:
+```
+sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "I realLy hOpe VancouvEr posseSs Yummy Soft vAnilla Dupper Mint Ice Nutella cream" | cat -e
+ILOVESYSADMIN$
+sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "WHAT do you SAY?" | cat -e
+WHATSAY$
+sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "cannot read you" | cat -e
+$
+sylvain@ubuntu$
+```
+chmod a+x 7-OMG_WHY_ARE_YOU_SHOUTING.rb
 
 # Git push command
 git add --all; git commit -m "";git push
