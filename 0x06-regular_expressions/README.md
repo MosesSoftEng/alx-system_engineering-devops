@@ -101,6 +101,12 @@ chmod a+x 4-repetition_token_3.rb;
 
 
 ## [5-beginning_and_end.rb](5-beginning_and_end.rb)
+```
+hn
+hbn
+hbtn
+h8n
+```
 Requirements:
 
  - The regular expression must be exactly matching a string that starts with h ends with n and can have any single character in between
@@ -121,6 +127,28 @@ $
 ```
 
 chmod a+x 5-beginning_and_end.rb
+
+## [6-phone_number.rb](6-phone_number.rb)
+This task is brought to you by a professional advisor Neha Jain, Senior Software Engineer at LinkedIn.
+
+Requirement:
+
+ - The regular expression must match a 10 digit phone number
+
+Example:
+```
+sylvain@ubuntu$ ./6-phone_number.rb 4155049898 | cat -e
+4155049898$
+sylvain@ubuntu$ ./6-phone_number.rb " 4155049898" | cat -e
+$
+sylvain@ubuntu$ ./6-phone_number.rb "415 504 9898" | cat -e
+$
+sylvain@ubuntu$ ./6-phone_number.rb "415-504-9898" | cat -e
+$
+sylvain@ubuntu$
+```
+
+chmod a+x 6-phone_number.rb
 
 # Git push command
 git add --all; git commit -m "";git push
