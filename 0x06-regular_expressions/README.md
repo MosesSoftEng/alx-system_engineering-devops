@@ -126,8 +126,7 @@ sylvain@ubuntu$
 $
 ```
 
-chmod a+x 5-beginning_and_end.rb
-
+chmod a+x 5-beginning_and_end.rb; ./5-beginning_and_end.rb 'hn'
 ## [6-phone_number.rb](6-phone_number.rb)
 ```
 4155049898
@@ -154,7 +153,7 @@ $
 sylvain@ubuntu$
 ```
 
-chmod a+x 6-phone_number.rb
+chmod a+x 6-phone_number.rb; ./6-phone_number.rb 4155049898
 
 ## 7-OMG_WHY_ARE_YOU_SHOUTING.rb
 ```
@@ -176,7 +175,7 @@ sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "cannot read you" | cat -e
 $
 sylvain@ubuntu$
 ```
-chmod a+x 7-OMG_WHY_ARE_YOU_SHOUTING.rb
+chmod a+x 7-OMG_WHY_ARE_YOU_SHOUTING.rb; ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "I realLy hOpe VancouvEr posseSs Yummy Soft vAnilla Dupper Mint Ice Nutella cream"
 
 # Git push command
 git add --all; git commit -m "";git push
