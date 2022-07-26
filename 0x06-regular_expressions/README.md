@@ -22,19 +22,26 @@ $
 chmod a+x 0-simply_match_school.rb;
 
 ## [1-repetition_token_0.rb](1-repetition_token_0.rb)
-Requirements:
-
- - Find the regular expression that will match the above cases
- - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
-
-
- ```
+```
 hbtn 
 hbtttn 
 hbttttn 
 hbtttttn 
 hbttttttn 
 ```
+
+hbn
+hbtn
+**hbttn**
+**hbtttn**
+**hbttttn**
+**hbtttttn**
+hbttttttn
+
+Requirements:
+
+ - Find the regular expression that will match the above cases
+ - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 chmod a+x 1-repetition_token_0.rb; ./1-repetition_token_0.rb
 
@@ -65,6 +72,32 @@ Requirements:
  - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 chmod a+x 3-repetition_token_2.rb;
+
+## [4-repetition_token_3.rb](4-repetition_token_3.rb)
+
+```
+hbn
+hbon
+hbtn
+hbttn
+hbtttn
+hbttttn
+```
+
+**hbn**
+hbon
+**hbtn**
+**hbttn**
+**hbtttn**
+**hbttttn**
+
+Requirements:
+
+ - Find the regular expression that will match the above cases
+ - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+ - Your regex should not contain square brackets
+
+chmod a+x 4-repetition_token_3.rb;
 
 # Git push command
 git add --all; git commit -m "";git push
