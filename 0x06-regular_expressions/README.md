@@ -44,8 +44,27 @@ Requirements:
  - Find the regular expression that will match the above cases
  - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
+```
+htn
+hbtn
+hbbtn
+hbbbtn
+```
 
 chmod a+x 2-repetition_token_1.rb;
+
+## 3-repetition_token_2.rb
+htn
+**hbtn**
+**hbbtn**
+**hbbbtn**
+
+Requirements:
+
+ - Find the regular expression that will match the above cases
+ - Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+
+chmod a+x 3-repetition_token_2.rb;
 
 # Git push command
 git add --all; git commit -m "";git push
