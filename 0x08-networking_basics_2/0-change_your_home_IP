@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script that configures an Ubuntu server with Requirements:
+#	localhost resolves to 127.0.0.2
+#	facebook.com resolves to 8.8.8.8.
+
+# create a backup host file in home directory
+cp /etc/hosts ~/"$(date +%s)hosts.new"
+
+# Add new rules to host file
+echo "localhost	127.0.0.2" >> /etc/hosts
+echo "facebook.com	8.8.8.8" >> /etc/hosts
