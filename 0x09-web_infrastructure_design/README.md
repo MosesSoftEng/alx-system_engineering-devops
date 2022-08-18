@@ -42,4 +42,9 @@ Queries per second
 A measure of the rate of traffic going in a particular server serving a Web domain. 
 
 
-https://drive.google.com/file/d/1g_uyeRDsr8bhXZYKx3d--KSnlHDuPqTr/view?usp=sharing
+https://drive.google.com/file/d/1g_uyeRDsr8bhXZYKx3d--KSnlHDuPqTr/view
+
+
+## 3-scale_up
+
+https://drive.google.com/file/d/1GIo7TQTou2wnC0qYLYOgiN9Wbkpur57u/view
