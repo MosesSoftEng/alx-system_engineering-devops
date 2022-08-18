@@ -36,3 +36,10 @@ Primary database is regarded as the authoritative source, while the replica data
 https://drive.google.com/file/d/1WQygfW1d14N_N4mhcfBiBExog0-Nc_3Q/view
 
 
+## 2. Secured and monitored web infrastructure
+
+Queries per second
+A measure of the rate of traffic going in a particular server serving a Web domain. 
+
+
+https://drive.google.com/file/d/1g_uyeRDsr8bhXZYKx3d--KSnlHDuPqTr/view?usp=sharing
