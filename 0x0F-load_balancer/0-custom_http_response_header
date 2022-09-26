@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Setup custom http response header.
+
+# Setup custom http response header
+sudo sed -i "s/listen \[::\]:80 default_server;/&\n\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/sites-enabled/default
+
+# Restart nginx server
+sudo service nginx restart
