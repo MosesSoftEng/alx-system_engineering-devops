@@ -6,9 +6,9 @@ exec { 'Update apt library':
   path    => '/usr/bin/'
 }
 
-# Install nginx
 package { 'nginx':
-  ensure   => 'installed',
+  ensure  => installed,
+  require => Exec['apt-get-update'],
 }
 
 file_line { 'a':
