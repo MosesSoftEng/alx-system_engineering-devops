@@ -53,6 +53,12 @@ exec { 'restart nginx':
   path    => '/usr/bin:/usr/sbin:/bin',
 }
 
+# allow HTTP
+exec { 'allow HTTP':
+  command => "ufw allow 'Nginx HTTP'",
+  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+}
+
 # Start nginx service
 service { 'nginx':
   ensure  => running,
