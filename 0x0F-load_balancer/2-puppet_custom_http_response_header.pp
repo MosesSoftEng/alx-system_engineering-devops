@@ -53,8 +53,8 @@ exec { 'restart nginx':
   path    => '/usr/bin:/usr/sbin:/bin',
 }
 
-# Restart nginx service
-# service { 'nginx':
-#   ensure  => running,
-#   require => Package['nginx'],
-# }
+# Start nginx service
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
+}
