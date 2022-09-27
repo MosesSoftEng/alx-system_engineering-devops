@@ -1,7 +1,8 @@
 # Install nginx web server and configure using puppet
 
-exec { 'apt-get-update':
-  command => '/usr/bin/apt-get update',
+exec { 'Update apt library':
+  command => 'sudo apt update',
+  path    => '/usr/bin/',
 }
 
 package { 'nginx':
