@@ -13,6 +13,11 @@ package { 'nginx':
   ensure   => 'installed',
 }
 
+# Set index content
+file { '/var/www/html/index.nginx-debian.html':
+  content => 'Hello World!',
+}
+
 # Add custom header to nginx
 file_line { 'Custom header':
   ensure => 'present',
