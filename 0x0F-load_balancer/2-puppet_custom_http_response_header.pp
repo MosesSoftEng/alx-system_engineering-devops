@@ -16,6 +16,7 @@ file_line { 'Custom header':
   path   => '/etc/nginx/sites-enabled/default',
   after  => 'listen \[::\]:80 default_server;',
   line   => "\tadd_header X-Served-By ${hostname};",
+  require => Package['nginx'],
 }
 
 # Restart nginx service
