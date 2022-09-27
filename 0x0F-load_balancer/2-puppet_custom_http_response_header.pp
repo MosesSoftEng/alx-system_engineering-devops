@@ -26,8 +26,35 @@ file_line { 'Custom header':
   line   => "\tadd_header X-Served-By ${hostname};",
 }
 
-# Restart nginx service
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+# Add permanent redirect
+# file_line { 'Add redirect line':
+#   ensure => 'present',
+#   path   => '/etc/nginx/sites-enabled/default',
+#   after  => 'server_name _;',
+#   line   => "\tlocation /redirect_me {\n\t\treturn 301 http://github.com/;\n\t}\n",
+# }
+
+# Add custom error
+# file_line { 'Custom error':
+#   ensure => 'present',
+#   path   => '/etc/nginx/sites-enabled/default',
+#   after  => 'server_name _;',
+#   line   => "\terror_page 404 /custom_404.html;\n\tlocation /custom_404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}\n",
+# }
+
+# Set index content
+# file { '/var/www/html/custom_404.html':
+#   content => "Ceci n'est pas une page",
+# }
+
+# restart nginx
+exec { 'restart nginx':
+  command => 'service nginx restart',
+  path    => '/usr/bin:/usr/sbin:/bin',
 }
+
+# Restart nginx service
+# service { 'nginx':
+#   ensure  => running,
+#   require => Package['nginx'],
+# }
