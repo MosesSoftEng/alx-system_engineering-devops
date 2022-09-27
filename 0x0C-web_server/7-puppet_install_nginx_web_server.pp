@@ -13,12 +13,6 @@ package { 'nginx':
   ensure   => 'installed',
 }
 
-# allow HTTP
-exec { 'allow HTTP':
-  command => "ufw allow 'Nginx HTTP'",
-  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-}
-
 # Configure nginx
 file_line { 'Add redirect line':
   ensure => 'present',

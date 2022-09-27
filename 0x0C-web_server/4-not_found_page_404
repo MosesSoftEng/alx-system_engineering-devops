@@ -2,11 +2,11 @@
 # Install nginx with custom 404 page that contains the string
 # Ceci n'est pas une page.
 
-# Instal nginx
+# Install nginx
 sudo apt update
 sudo apt install -y nginx
 
-# Add custom 404 error page to nfinx confg
+# Add custom 404 error page to /etc/nginx/sites-enabled/default at line 53
 sudo sed -i "53s/.*/\t\terror_page 404 \/custom_404.html;\n\t\tlocation \/custom_404.html {\n\t\t\t\troot \/var\/www\/html;\n\t\t\t\tinternal;\n\t\t}/" /etc/nginx/sites-enabled/default
 
 # Create default nginx folder for pages

@@ -21,6 +21,11 @@ file_line { 'Custom header':
   line   => 'add_header X-Served-By $hostname;',
 }
 
+file { '/var/www/html/index.html':
+  content => 'Hello World!',
+  require => Package['nginx'],
+}
+
 # Restart nginx service
 service { 'nginx':
   ensure  => running,

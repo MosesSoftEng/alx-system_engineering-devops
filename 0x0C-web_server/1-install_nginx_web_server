@@ -5,7 +5,7 @@
 sudo apt update
 sudo apt install -y nginx
 
-# Create default nginx folder
+# Create default nginx folder for pages
 sudo mkdir -p /var/www/html
 
 # Create default index.html file

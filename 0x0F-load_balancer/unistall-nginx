@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# unistall nginx server.
+
+sudo service nginx stop
+sudo apt-get purge -y nginx nginx-common
+sudo apt-get -y autoremove
+sudo rm -rf /etc/nginx
