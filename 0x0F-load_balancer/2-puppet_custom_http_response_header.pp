@@ -19,6 +19,7 @@ file_line { 'Custom header':
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
   line   => 'add_header X-Served-By $hostname;',
+  require => Package['nginx'],
 }
 
 file_line { 'a':
