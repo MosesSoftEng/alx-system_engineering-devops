@@ -172,6 +172,8 @@ ssh ubuntu@3.237.4.231 ./1-install_load_balancer > /dev/null 2>&1
 ssh ubuntu@3.237.4.231 cat /etc/default/haproxy
 ssh ubuntu@3.237.4.231 cat /etc/haproxy/haproxy.cfg
 
+ssh ubuntu@3.227.217.150 cat /etc/haproxy/haproxy.cfg
+
 
 ## Add a custom HTTP header with Puppet
 chmod +x 2-puppet_custom_http_response_header.pp
