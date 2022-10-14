@@ -23,7 +23,18 @@ shellcheck 1-run_nginx_as_nginx
 ```
 
 ## [1. Run Nginx as Nginx ](1-run_nginx_as_nginx)
-Script to set user nginx as NGINX service user running on port 8080.
+Script to run nginx server under user nginx on port 8080.
+
+```bash
+# Run script
+./1-run_nginx_as_nginx
+
+# Format check
+shellcheck 1-run_nginx_as_nginx
+```
+
+## [2. 7 lines or less ](100-fix_in_7_lines_or_less)
+Shorter script of task 1
 
 ```bash
 # Run script
