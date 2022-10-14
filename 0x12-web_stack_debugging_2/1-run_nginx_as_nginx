@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to set user nginx as NGINX service user running on port 8080
+# Script to run nginx server under user nginx on port 8080
 # Usage: 1-run_nginx_as_nginx
 
 # Make nginx.conf readable by all user and groups
@@ -8,7 +8,7 @@ chmod 644 /etc/nginx/nginx.conf
 # Change default port 80 to 8080
 sed -i 's/80 default_server/8080 default_server/g' /etc/nginx/sites-enabled/default
 
-# Kill apache running on port 8080.
+# Kill apache running on port 8080
 pkill -f apache2
 
 # Start nginx server as nginx user
