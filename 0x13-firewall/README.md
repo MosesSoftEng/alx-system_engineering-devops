@@ -17,24 +17,85 @@ Deployed directly on the host itself to control network traffic or other computi
  - a daemon or service as a part of the operating system.
  - an agent application for protection.
 
+## ufw firewall
+A program for managing a netfilter firewall designed to be easy to use. It uses a command-line interface consisting of a small number of simple commands, and uses iptables for configuration.
+
+
+```bash
+# Check ufw status
+sudo ufw status
+
+# Show added rules
+sudo ufw show added
+
+# Enable ufw
+sudo ufw enable
+
+# Restart ufw
+sudo service ufw restart
+
+# Disable ufw
+sudo ufw disable
+
+# Reset ufw
+sudo ufw reset
+
+# Edit before rules
+sudo vi /etc/ufw/before.rules
+```
 
 # :computer: Tasks
 ## [0. Block all incoming traffic but](0-block_all_incoming_traffic_but)
 Install firewall and set up rules; block all incoming traffic except TCP ports 22, 443 and 80 in web-01 server.
 
 ```bash
-# Check ufw status ans rules
-sudo ufw status verbose
-
-# Allow SSH
+# Allow port 22 for ssh
 sudo ufw allow ssh
 
-# Allow HTTPS and SSL
+# Allow port 443 for https/ssl
 sudo ufw allow https
 
-# Allow HTTP
+# Allow port 80 for http
 sudo ufw allow http
+
+# Enable ufw
+sudo ufw enable
+```
+
+## [1. Port forwarding ](100-port_forwarding)
+Configure web-01 so that its firewall redirects port 8080/TCP to port 80/TCP.
+
+```bash
+# Redirect incoming connections to port 8080 to port 80 set rule in /etc/ufw/before.rules add the port redirection rule
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+
+```
+
+```bash
+# TODO: Write a shell or python test.
+# Check port 80
+curl -sI web-01.msofteng.tech:80
+
+# Check port 8080 forwarding to port 80
+curl -sI web-01.msofteng.tech:8080
+curl -sI 3.85.222.47:8080
 ```
 
 # :books: References
 1. [Firewall (computing) Wikipedia](https://en.wikipedia.org/wiki/Firewall_%28computing%29)
+2. [Uncomplicated Firewall](https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
+3. [How To Set Up a Firewall with UFW on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
+4. [How to set up UFW port forwarding](https://bobcares.com/blog/ufw-port-forwarding/)
+
+
+# :man: Author and Credits.
+This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Feel free to get intouch with me;
+
+:iphone: WhtasApp [+254115227963](https://wa.me/254115227963)
+
+:email: Email [moses.soft.eng@gmail.com](mailto:moses.soft.eng@gmail.com)
+
+:thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project requirements.
+
