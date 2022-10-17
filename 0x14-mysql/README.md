@@ -1,7 +1,8 @@
 # :book: 0x14. MySQL
-##
+## 
 
-## Install MySQL 5.7 in ubuntu
+# :computer: Tasks
+## 0. Install MySQL
 ```bash
 ## Install MySQL 5.7 in ubuntu
 # Create signature key
@@ -83,11 +84,228 @@ sudo rm -rf /var/lib/mysql
 mysql --version
 ```
 
-# :computer: Tasks
-## []()
+## 1. Let us in!
+### Create user and grant replication privilege
+```bash
+# Open MySQL shell
+mysql -u root -p # or sudo mysql
+
+# Create user holberton_user
+CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+
+# Confirm user creation
+Select user from mysql.user;
+
+# Give user privilege to check primary/replica status of your databases
+GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
+FLUSH PRIVILEGES;
+
+# Confirm privilege
+SHOW GRANTS FOR 'holberton_user'@'localhost';
+
+# 
+```
+
+# 2. If only you could see what I've seen with your eyes
+## Create database and table
+```bash
+# Create tyrell_corp database
+CREATE DATABASE IF NOT EXISTS tyrell_corp;
+
+# Confirm tyrell_corp database is created
+SHOW DATABASES;
+
+# Set tyrell_corp as default database
+USE tyrell_corp
+
+# Create table nexus6
+CREATE TABLE IF NOT EXISTS nexus6 (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR(255) NOT NULL
+);
+
+# Confirm nexus6 table creation
+SHOW TABLES;
+DESCRIBE nexus6;
+
+# Insert record into table nexus6
+INSERT INTO nexus6 VALUES(0, 'Lorem Ipsum');
+
+# Show table records
+SELECT * FROM nexus6;
+
+# Give user holberton_user SELECT privilege to table nexus6
+GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
+
+# Show holberton_user privileges
+SHOW GRANTS FOR 'holberton_user'@'localhost';
+
+# Check
+ubuntu@229-web-01:~$ mysql -uholberton_user -p -e "use tyrell_corp; select * from nexus6"
+projectcorrection280hbtn
+
+```
+
+## 3. Quite an experience to live in fear, isn't it?
+Create replica user on server web-01
+
+```bash
+# Create user replica_user in web-01
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
+
+# Confirm user creation
+Select user from mysql.user;
+
+# Give user privilege to check primary/replica status of your databases
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+FLUSH PRIVILEGES;
+
+# Show privileges for replica_user
+SHOW GRANTS FOR 'replica_user'@'%';
+
+# Give user holberton_user SELECT privilege to table nexus6
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+
+# Show holberton_user privileges
+SHOW GRANTS FOR 'holberton_user'@'localhost';
+
+# Check
+mysql -uholberton_user -p -e 'SELECT user, Repl_slave_priv FROM mysql.user'
+projectcorrection280hbtn
+```
+
+## Setup a Primary-Replica infrastructure using MySQL.
+MySQL Source - web-01.
+MySQL Replica - web-02.
+
+### [Configuring the Source MySQL server](4-mysql_configuration_primary)
+```bash
+# Open source MySQL configuration file
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Add the statements and save
+server-id    = 1
+log_bin      = /var/log/mysql/mysql-bin.log
+binlog_do_db = tyrell_corp
+
+# Comment out the statement bind-address
+# bind-address	= 127.0.0.1
+
+# Restart MySQL Server and check status
+sudo systemctl restart mysql
+sudo systemctl status mysql
+
+# Check source status
+SHOW MASTER STATUS\G
+
+*************************** 1. row ***************************
+             File: mysql-bin.000001
+         Position: 154
+     Binlog_Do_DB: tyrell_corp
+ Binlog_Ignore_DB: 
+Executed_Gtid_Set: 
+1 row in set (0.00 sec)
+```
+
+### [Configure the replica MySQL server](4-mysql_configuration_replica)
+```bash
+# Open MySQL configuration file
+sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Add the statements and save
+server-id       = 2
+log_bin         = /var/log/mysql/mysql-bin.log
+relay-log       = /var/log/mysql/mysql-relay-bin.log
+binlog_do_db    = tyrell_corp
+
+# Restart MySQL Server and check status
+sudo systemctl restart mysql
+sudo systemctl status mysql
+
+# Connect replica to master
+CHANGE MASTER TO
+MASTER_HOST='3.85.222.47',
+MASTER_USER='replica_user',
+MASTER_PASSWORD='projectcorrection280hbtn',
+MASTER_LOG_FILE='',
+MASTER_LOG_POS=4;
+
+#Start slave.
+START SLAVE;
+
+# Check replica status
+SHOW SLAVE STATUS\G
+
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 3.85.222.47
+                  Master_User: replica_user
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql-bin.000001
+          Read_Master_Log_Pos: 154
+               Relay_Log_File: mysql-relay-bin.000002
+                Relay_Log_Pos: 367
+        Relay_Master_Log_File: mysql-bin.000001
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB: 
+          Replicate_Ignore_DB: 
+           Replicate_Do_Table: 
+       Replicate_Ignore_Table: 
+      Replicate_Wild_Do_Table: 
+  Replicate_Wild_Ignore_Table: 
+                   Last_Errno: 0
+                   Last_Error: 
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 154
+              Relay_Log_Space: 574
+              Until_Condition: None
+               Until_Log_File: 
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File: 
+           Master_SSL_CA_Path: 
+              Master_SSL_Cert: 
+            Master_SSL_Cipher: 
+               Master_SSL_Key: 
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error: 
+               Last_SQL_Errno: 0
+               Last_SQL_Error: 
+  Replicate_Ignore_Server_Ids: 
+             Master_Server_Id: 1
+                  Master_UUID: b05603c5-4e01-11ed-81cb-1617a1c0af15
+             Master_Info_File: /var/lib/mysql/master.info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for more updates
+           Master_Retry_Count: 86400
+                  Master_Bind: 
+      Last_IO_Error_Timestamp: 
+     Last_SQL_Error_Timestamp: 
+               Master_SSL_Crl: 
+           Master_SSL_Crlpath: 
+           Retrieved_Gtid_Set: 
+            Executed_Gtid_Set: 
+                Auto_Position: 0
+         Replicate_Rewrite_DB: 
+                 Channel_Name: 
+           Master_TLS_Version: 
+```
+
+## [5. MySQL backup ](5-mysql_backup)
+Script to create a zip backup of MySQL database.
+
+```bash
+```
+
 
 # :books: References
-1. []()
+1. [Setting Up Binary Log File Position Based Replication](https://dev.mysql.com/doc/refman/5.7/en/replication-howto.html)
+2. [How To Set Up Replication in MySQL](https://www.digitalocean.com/community/tutorials/how-to-set-up-replication-in-mysql )
 
 
 # :man: Author and Credits.
