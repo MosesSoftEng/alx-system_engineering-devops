@@ -27,4 +27,4 @@ if __name__ == "__main__":
         # Output data
         print("Employee {} is done with tasks({}/20):".format(
             user.get('name'), len(titles), len(todos)))
-        print('\n'.join(['     {}'.format(title) for title in titles]))
+        print('\n'.join(['\t {}'.format(title) for title in titles]))
