@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Exports a user TODO list in CSV format
+"""Exports a user TODO list as a CSV file
 
 From https://jsonplaceholder.typicode.com/users/1/todos
 """
