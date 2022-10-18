@@ -11,6 +11,7 @@ import sys
 api_url = 'https://jsonplaceholder.typicode.com/'
 users_url = api_url + 'users'
 
+
 def get_user_todos(id, username):
     todos_url = api_url + 'users/{}/todos'.format(id)
 
@@ -51,4 +52,3 @@ if __name__ == "__main__":
     # Write data to file
     with open('todo_all_employees.json', 'w') as json_file:
         json.dump(json_data, json_file)
-
