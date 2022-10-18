@@ -34,4 +34,3 @@ if __name__ == "__main__":
         # Write data to file
         with open('{}.json'.format(user_id), 'w') as json_file:
             json.dump({user_id: json_data}, json_file)
-
