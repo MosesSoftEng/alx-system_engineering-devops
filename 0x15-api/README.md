@@ -11,17 +11,49 @@ python -m pip install requests
 
 # :computer: Tasks
 ## [0. Gather data from an API](0-gather_data_from_an_API.py)
-Write a Python script that returns information about his/her TODO list progress.
+Write a Python script that returns information about a user TODO list progress.
 
 ```bash
-touch 0-gather_data_from_an_API.py
-chmod +x 0-gather_data_from_an_API.py
-pep8 0-gather_data_from_an_API.py
-./0-gather_data_from_an_API.py
+touch 3-dictionary_of_list_of_dictionaries.py
+chmod +x 3-dictionary_of_list_of_dictionaries.py
+pep8 3-dictionary_of_list_of_dictionaries.py
+./3-dictionary_of_list_of_dictionaries.py
 ```
+
+## [1. Export to CSV ](1-export_to_CSV.py)
+Write a Python script that exports a user TODO list in CSV format.
+
+```bash
+touch 1-export_to_CSV.py
+chmod +x 1-export_to_CSV.py
+pep8 1-export_to_CSV.py
+./1-export_to_CSV.py
+```
+
+## [2. Export to JSON  ](2-export_to_JSON.py)
+Write a Python script that exports a user TODO list in JSON format.
+
+```bash
+touch 2-export_to_JSON.py
+chmod +x 2-export_to_JSON.py
+pep8 2-export_to_JSON.py
+./2-export_to_JSON.py
+```
+
+## [3. Dictionary of list of dictionaries ](3-dictionary_of_list_of_dictionaries.py)
+Write a Python script that exports all users TODO list in JSON format.
+
+```bash
+touch 2-export_to_JSON.py
+chmod +x 2-export_to_JSON.py
+pep8 2-export_to_JSON.py
+./2-export_to_JSON.py
+```
+
 
 # :books: References
 1. [JSONPlaceholder REST API Service](https://jsonplaceholder.typicode.com/)
+
 
 
 # :man: Author and Credits.

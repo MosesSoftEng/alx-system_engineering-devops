@@ -68,7 +68,7 @@ sudo apt-get update
 sudo apt-cache policy mysql-server
 
 # Install mysql 5.7
-sudo apt install -fy mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
+sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
 
 # Check if installed
 mysql --version
@@ -79,6 +79,18 @@ sudo apt-get remove -y --purge mysql-server mysql-client mysql-common
 sudo apt-get autoclean
 # Remove mysql data
 sudo rm -rf /var/lib/mysql
+
+# uninstall mysql server
+sudo apt remove -y --purge mysql-server
+sudo apt purge -y mysql-server
+sudo apt autoremove
+sudo apt autoclean
+sudo apt remove -y dbconfig-mysql
+
+sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+sudo rm -r /etc/mysql /var/lib/mysql
+sudo apt autoremove
+sudo apt autoclean
 
 # Check if uninstalled
 mysql --version
