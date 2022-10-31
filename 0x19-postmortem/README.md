@@ -1,4 +1,4 @@
-![](if-you-could-436e34b63e.jpg)
+![This is an image](https://media.makeameme.org/created/if-you-could-436e34b63e.jpg)
 
 # Issue summary
 Access to server endpoint using curl 0:80 was returning `curl: (7) Failed to connect to 0 port 80: Connection refused`. The issue lasted for 2 hours after the last server update from a team member up to when it was resolved. The Airbnb clone website was completely inaccessible to half of the clients during the 2 hours downtime. This was caused by a wrong  port value set in nginx configuration files.
