@@ -14,7 +14,7 @@ def number_of_subscribers(subreddit):
     # Get data
     response = requests.request(
         'GET',
-        f'https://www.reddit.com/r/{subreddit}/about.json',
+        'https://www.reddit.com/r/{}/about.json'.format(subreddit),
         headers={
             'User-Agent': 'my browser'
         },
