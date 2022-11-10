@@ -25,10 +25,12 @@ server {
     # Custom headers
     add_header X-Served-By $HOSTNAME;
 
-    # Routes
+    # Server route /airbnb-onepage/ to the public
 	location /airbnb-onepage/ {
 		proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
 	}
+
+    # Server route with query parameters /airbnb-dynamic/number_odd_or_even/$1 to the public
     location ~ /airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
         proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
     }
@@ -51,20 +53,10 @@ server {
 
 	# root /var/www/html;
 
-	# # Add index.php to the list if you are using PHP
+	# Add index.php to the list if you are using PHP
 	# index index.html index.htm index.nginx-debian.html;
 
 	# server_name _;
-
-	# location /redirect_me {
-	# 	return 301 http://github.com/;
-	# }
-	
-	# error_page 404 /custom_404.html;
-	# location /custom_404.html {
-	# 	root /var/www/html;
-	# 	internal;
-	# }
 
 	# location / {
 	# 	# First attempt to serve request as file, then
