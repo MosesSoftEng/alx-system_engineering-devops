@@ -19,10 +19,11 @@ Process to setting up flask web application in a server.
 git clone https://github.com/MosesSoftEng/AirBnB_clone_v2.git AirBnB_clone_v2
 
 # Install flask
-pip3 install Flask
+sudo pip3 install Flask
 
-# Run flask web app server
-python3 -m web_flask.0-hello_route
+# Run flask web app server, not required step
+# cd AirBnB_clone_v2
+# python3 -m web_flask.0-hello_route
 
 # Error: Port 5000 is in use by another program
 # List ports and application using port 5000
@@ -44,13 +45,20 @@ Setup Gunicorn WSGI for flask web application.
 
 ```bash
 # Install Gunicorn
-pip install gunicorn
+pip3 install gunicorn
 
 # Confirm installation
 gunicorn --version
 
 # Set gunicorn entry point to flask app
+cd AirBnB_clone_v2
 gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app
+
+# Bind flask app to Gunicorn instance, execute in backgroud terminal
+tmux new-session -d 'gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app'
+
+# Confrim binding
+ps ax | grep gunicorn
 
 # Test gunicorn in a different terminal
 curl 127.0.0.1:5000/airbnb-onepage/
@@ -59,26 +67,20 @@ curl 127.0.0.1:5000/airbnb-onepage/
 ## [2. Serve a page with Nginx](2-app_server-nginx_config)
 ```bash
 # Set the configuration in /etc/nginx/sites-enabled/default
-server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+sudo vi /etc/nginx/sites-enabled/default
 
-    # Custom headers
-    add_header X-Served-By $HOSTNAME;
-
-    # Rouetes
-	location / {
-		proxy_pass http://127.0.0.1:5000/;
-	}
+# Server route /airbnb-onepage/ to the public
+location /airbnb-onepage/ {
+    proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
 }
 
 # Confirm congiuration files and Restart nginx.
 sudo nginx -t
 sudo service nginx restart
 
-# Test
-curl -sI 3.85.222.47/airbnb-onepage/
-curl 3.85.222.47/airbnb-onepage/
+# Test in different machine
+curl -sI 100.25.17.98/airbnb-onepage/
+curl 100.25.17.98/airbnb-onepage/
 
 touch 2-app_server-nginx_config
 ```
@@ -90,17 +92,25 @@ touch 2-app_server-nginx_config
         proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
     }
 
-tmux new-session -d 'gunicorn --bind 0.0.0.0:5000 web_flask.0-hello_route:app'
+# Confirm nginx configuration and restart nginx.
+sudo nginx -t
+sudo service nginx restart
+
+# Bind flask app to Gunicorn instance, execute in backgroud terminal
+cd AirBnB_clone_v2
 tmux new-session -d 'gunicorn --bind 0.0.0.0:5001 web_flask.6-number_odd_or_even:app'
+
+# Confrim binding
+ps ax | grep gunicorn
 
 #Tests
 curl 127.0.0.1:5000/airbnb-onepage/
-curl 3.85.222.47/airbnb-onepage/
+curl 100.25.17.98/airbnb-onepage/
 
-curl -sI 33.85.222.47/airbnb-onepage/
+curl -sI 3100.25.17.98/airbnb-onepage/
 
 curl 127.0.0.1:5001/number_odd_or_even/6
-curl 3.85.222.47/airbnb-dynamic/number_odd_or_even/6
+curl 100.25.17.98/airbnb-dynamic/number_odd_or_even/6
 
 touch 3-app_server-nginx_config
 ```
@@ -110,9 +120,14 @@ touch 3-app_server-nginx_config
 git clone https://github.com/marcrine-geek/AirBnB_clone_v3.git AirBnB_clone_v3
 
 # Bind gunicorn to flask api
+cd AirBnB_clone_v3
 tmux new-session -d 'gunicorn --bind 0.0.0.0:5002 api.v1.app:app'
 
+# Confrim binding
+ps ax | grep gunicorn
+
 # Run flask api
+cd AirBnB_clone_v3
 HBNB_API_HOST=0.0.0.0 HBNB_API_PORT=5002 python3 -m api.v1.app
 
 # Error
@@ -148,9 +163,11 @@ sudo service nginx restart
 # Tests
 # On same server
 curl 127.0.0.1:5002/api/v1/states
+curl 127.0.0.1:5002/api/v1/status/
 
 # From another comp
-curl 3.85.222.47/api/v1/states
+curl 100.25.17.98/api/v1/states
+curl http://100.25.17.98/api/v1/status/
 
 touch 4-app_server-nginx_config
 ```
@@ -160,8 +177,13 @@ touch 4-app_server-nginx_config
 # Clone project to server
 git clone https://github.com/MosesSoftEng/AirBnB_clone_v4.git AirBnB_clone_v4
 
+# Install mysql 5.7
+https://github.com/MosesSoftEng/alx-system_engineering-devops/tree/master/0x14-mysql 
+
 # Test if web dynamic runs
+cd AirBnB_clone_v4
 HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db python3 -m web_dynamic.2-hbnb
+curl 127.0.0.1:5003/2-hbnb/
 
 # Error
 # ModuleNotFoundError: No module named 'MySQLdb'
@@ -185,15 +207,19 @@ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 # Port 5000 is in use by another program.
 # Change port in 5000 to 5003 in web_dynamic/2-hbnb.py
 
-# In browser
-http://127.0.0.1:5003/2-hbnb/
-
 # Bind gunicorn to flask dynamic
 cd ~/AirBnB_clone_v4
 tmux new-session -d 'gunicorn --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app'
 
+# Confrim binding
+ps ax | grep gunicorn
+
 # Test
 curl 127.0.0.1:5003/2-hbnb/
+curl 0.0.0.0:5003/2-hbnb/
+
+# In browser
+http://127.0.0.1:5003/2-hbnb/
 
 # Web dynamic set 2-hbnb as root route
     location / {
@@ -204,8 +230,36 @@ curl 127.0.0.1:5003/2-hbnb/
 sudo nginx -t
 sudo service nginx restart
 
-touch 5-app_server-nginx_config
+# In another machine
+curl 100.25.17.98/
 
+# Enable CORS app.py
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+touch 5-app_server-nginx_config
+```
+
+## [6. Deploy it!](gunicorn.service)
+
+```bash
+# Create configuration file gunicorn.service at /etc/systemd/system/
+sudo touch /etc/systemd/system/gunicorn.service
+sudo chmod +x /etc/systemd/system/gunicorn.service
+
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+
+ps ax | grep gunicorn
+
+
+curl -s 100.25.17.98/2-hbnb | tail -5
+curl -s 100.25.17.98/ | tail -5
+```
+
+```bash
+touch 4-reload_gunicorn_no_downtime
+chmod +x 4-reload_gunicorn_no_downtime
 ```
 
 # :books: References
