@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
 
-sudo pkill -HUP gunicorn
+kill -HUP `ps -C gunicorn fch -o pid | head -n 1`
