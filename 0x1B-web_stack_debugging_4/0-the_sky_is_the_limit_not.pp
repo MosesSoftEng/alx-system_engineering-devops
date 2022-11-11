@@ -1,5 +1,6 @@
 # Set open file limit UNLIMIT to 4096
 
+include stdlib
 file_line {'set_UNLIMIT':
   path               => '/etc/default/nginx',
   line               => 'ULIMIT="-n 4096"',
