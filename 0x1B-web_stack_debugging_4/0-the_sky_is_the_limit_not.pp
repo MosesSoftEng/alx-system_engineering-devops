@@ -1,15 +1,11 @@
 # Set open file limit UNLIMIT to 4096
-
-include stdlib
-file_line {'set_UNLIMIT':
-  path               => '/etc/default/nginx',
-  line               => 'ULIMIT="-n 4096"',
-  match              => 'ULIMIT="-n 15"',
-  append_on_no_match => false
+exec { 'set_UNLIMIT':
+  command => 'sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
 }
 
 # Restart Nginx
 exec { 'nginx-restart':
-  command => 'nginx restart',
-  path    => '/etc/init.d/'
+  command => 'sudo service nginx restart',
+  path    => ['/usr/sbin/', '/usr/bin/']
 }
