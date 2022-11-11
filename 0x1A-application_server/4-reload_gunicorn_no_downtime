@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
 
-systemctl restart gunicorn
+grep gunicorn | awk '{ print $2 }' | xargs kill
