@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
-pkill -HUP gunicorn
+#   by sending HUP signal to master process
+
+kill -HUP "$(pgrep gunicorn | head -1)"
