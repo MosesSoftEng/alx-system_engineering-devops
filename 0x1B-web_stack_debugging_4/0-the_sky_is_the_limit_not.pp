@@ -5,7 +5,7 @@ exec { 'set_UNLIMIT':
 }
 
 # Restart Nginx
-exec { 'nginx-restart':
+exec { 'restart_nginx':
   command => 'sudo service nginx restart',
   path    => ['/usr/sbin/', '/usr/bin/']
 }
