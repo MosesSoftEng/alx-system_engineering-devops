@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
+
 ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
