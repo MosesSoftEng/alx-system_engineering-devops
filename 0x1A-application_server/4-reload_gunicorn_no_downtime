@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
 
-kill -HUP gunicorn
+kill -HUP "$(pgrep gunicorn | head -1)"
