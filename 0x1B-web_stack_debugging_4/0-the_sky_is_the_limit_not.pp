@@ -1,4 +1,5 @@
 # Comment out ULIMIT directive line
+include stdlib
 file_line {'comment_out_UNLIMIT':
   path               => '/etc/default/nginx',
   line               => '# ULIMIT="-n 15"',
