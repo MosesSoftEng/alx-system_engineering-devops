@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Terminate gunicorn processes gracefully
 
-pgrep gunicorn | head -1 | xargs kill -HUP
+systemctl restart gunicorn
