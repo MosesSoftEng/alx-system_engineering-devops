@@ -11,6 +11,8 @@ Project to set up;
 -> nginx, UFW
 
 # :briefcase: [0x1B. Web stack debugging #4](0x1B-web_stack_debugging_4)
-Project to apply Web stack debugging skills and come up with automated fixing using configuration management tool puppet
+The project covers;
+ - How to apply Web stack debugging skills.
+ - Coming up with automated fixing scripts using configuration management tool puppet.
 
--> nginx config, puppet
+-> nginx config; /etc/default/nginx, puppet, puppet-lint, shell, linux: /etc/security/limits.conf
