@@ -1,8 +1,8 @@
-# Comment out ULIMIT directive line
-include stdlib
-file_line {'comment_out_UNLIMIT':
+# Set open file limit UNLIMIT to 4096
+
+file_line {'set_UNLIMIT':
   path               => '/etc/default/nginx',
-  line               => '# ULIMIT="-n 15"',
+  line               => 'ULIMIT="-n 4096"',
   match              => 'ULIMIT="-n 15"',
   append_on_no_match => false
 }
