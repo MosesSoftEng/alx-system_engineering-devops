@@ -8,7 +8,9 @@ Project covers;
  - Application of Web stack debugging skills to solve nginx bug.
  - Coming up with automated fixing scripts using shell scripts.
 
--> DevOps, SysAdmin, Scripting, Web Stack Debugging, nginx configuration; /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default.
+-> DevOps, SysAdmin, Scripting, Web Stack Debugging
+
+-> nginx configuration; /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default.
 
 # :briefcase: [0x13. Firewall](0x13-firewall)
 Project to set up;
