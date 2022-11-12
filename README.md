@@ -2,6 +2,7 @@
 List of projects and topics covered for System Engineering Devops in ALX Holberton Software Engineering program.
 
 # :briefcase: [0x0E. Web stack debugging #1](0x13-firewall)
+![debugging](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/271/B4eeypV.jpg)
 Project covers;
  - Networking and Nginx configuration to listen to a specific port.
  - Application of Web stack debugging skills to solve nginx bug.
