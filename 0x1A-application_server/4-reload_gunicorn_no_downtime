@@ -2,4 +2,4 @@
 # Terminate gunicorn processes gracefully
 #   by sending HUP signal to master process
 
-kill -HUP "$(pgrep gunicorn | head -1)"
+sudo kill -HUP "$(pgrep -o gunicorn)"
