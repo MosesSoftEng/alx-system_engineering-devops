@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Replace port 8080 with 80
-sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites-available/default
-sudo sed -i 's/8080 default_server/80 default_server/g' /etc/nginx/sites-enabled/default
+# Create symbloic link between sites-available and sites-enabled
+ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
