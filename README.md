@@ -10,7 +10,7 @@ Project covers;
 
 -> DevOps, SysAdmin, Scripting, Web Stack Debugging
 
--> nginx configuration; /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default.
+-> Nginx configuration; /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default.
 
 # :briefcase: [0x13. Firewall](0x13-firewall)
 Project to set up;
@@ -25,3 +25,12 @@ The project covers;
  - Coming up with automated fixing scripts using configuration management tool puppet.
 
 -> nginx configuration; /etc/default/nginx, puppet, puppet-lint, shell, linux: /etc/security/limits.conf
+
+# :man: Author and Credits.
+This project was done by [SE. Moses Mwangi](https://github.com/MosesSoftEng). Feel free to get intouch with me;
+
+:iphone: WhatsApp [+254115227963](https://wa.me/254115227963)
+
+:email: Email [moses.soft.eng@gmail.com](mailto:moses.soft.eng@gmail.com)
+
+:thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project requirements.
