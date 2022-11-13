@@ -60,8 +60,11 @@ ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 Fix user limits
 
 ```bash
-touch 1-user_limit.pp
+cat /etc/security/limits.conf | tail -10
+touch 1-user_limit.
+ which -a sed
 puppet-lint 1-user_limit.pp
+puppet apply 1-user_limit.pp
 ```
 
 
