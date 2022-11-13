@@ -262,8 +262,14 @@ touch 4-reload_gunicorn_no_downtime
 chmod +x 4-reload_gunicorn_no_downtime
 ```
 
+## [7. No service interruption](4-reload_gunicorn_no_downtime)
+Write script to gracefully reload gunicorn to avoid downtimes.
+
+
+
 # :books: References
 1. [How To Serve Flask Applications with Gunicorn and Nginx on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-16-04)
+2. [Gunicorn Settings](https://docs.gunicorn.org/en/stable/settings.html)
 
 
 # :man: Author and Credits.
